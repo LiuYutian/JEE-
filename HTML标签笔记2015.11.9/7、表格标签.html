@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>table</title>
+	</head>
+	<body>
+		<!-- 表格线border；表格线颜色bordercolor；间隙cellspacing -->
+		<table border="1" bordercolor="blue" cellspacing="0" width="200" height="100">
+			<!-- 标题 -->
+			<caption> user info </caption>
+			<!-- 表格内容居中center -->
+			<tr align="center">
+				<td>name</td>
+				<td>id</td>
+				<td>age</td>
+			</tr>
+			<tr>
+				<td align="center">lyt</td>
+				<td>1</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td>xm</td>
+				<td>2</td>
+				<td>23</td>
+			</tr>
+			<tr>
+			<!-- th居中，加粗 -->
+				<th>xxm</th>
+				<th>3</th>
+				<th>23</th>
+			</tr>
+		</table>
+		<hr>
+		<!-- thead tbody tfoot 将表格分为了三部分，在dom操作是更精确 thead与tfoot和tbody显示效果上面有细微差异，thead与tfoot显示效果相同-->
+		<table border="1" bordercolor="blue" cellspacing="0" width="200" height="100">
+			<thead>
+				<tr>
+					<td>name</td>
+					<td>id</td>
+					<td>age</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>lyt</td>
+					<td>1</td>
+					<td>22</td>
+				</tr>		
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>xxm</td>
+					<td>3</td>
+					<td>23</td>
+				</tr>				
+			</tfoot>
+		</table>
+		<hr>
+		<!-- 单元格合并 colspan夸列，rowspan夸行 应用于td-->
+		<table border="1" bordercolor="blue" cellspacing="0" width="200" height="100">
+			<tr>
+				<td colspan="3" align="center">info</td>
+			</tr>
+			<tr>
+				<td>name</td>
+				<td>id</td>
+				<td>age</td>
+			</tr>
+			<tr>
+				<td>lyt</td>
+				<td>1</td>
+				<td rowspan="3">22</td>
+			</tr>
+			<tr>
+				<td>xm</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>xxm</td>
+				<td>3</td>
+			</tr>
+		</table>
+
+	</body>
+</html>

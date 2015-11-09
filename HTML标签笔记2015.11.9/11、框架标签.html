@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>框架标签</title>
+	</head>
+	<!-- frameset rows行 cols列 -->
+	<!-- frame name="名称" src="路径" -->
+	<!-- 不能写入body标签内部，而且需要去掉body -->
+	<!-- 想在哪一个区域进行跳转，超链接的target值就为哪一个区域的name -->
+	<frameset rows="100, *"><!--划分两部分上下，上面100像素，其余为下面-->
+		<frame name="top" src="8、表单标签.html"></frame>
+		<frameset cols="300, *"><!-- 将该区域划分为左右两部分，左边300像素，其余为右边 -->
+			<frame name="left" src="11、框架标签(测试标签).html"></frame>
+			<frame name="right" src="10、头标签.html"></frame>
+		</frameset>
+	</frameset>
+</html>

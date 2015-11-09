@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>表单form标签</title>
+	</head>
+	<body>
+		<!-- 数据提交时，控件如果没有name不能提交数据 如果以get方式提交URL路径参数格式为：？输入项name=输入值&作为参数间的间隔-->
+		<!-- form标签属性action跳转地址； method提交方式：常用post/get方式 enctype：与数据编码有关-->
+		<!-- post 提交信息不会出现在地址栏（数据在请求体中），get提交信息会将信息显示到URL中，大小有限制-->
+		<form  action="6、超链接标签.html" method="get">
+			手机号码：<input name="no" type="text"/><br>
+			创建密码：<input name="password" type="password"/><br>
+			<!-- ie 如果没有name属性则单选框不可选Chrome 如果没有name则可以多选 同一组单选框中必须有相同的name ,需要value区分选择 -->
+			性别：	<input type="radio" name="sex" value="nv" checked="checked" />女
+					<input type="radio" name="sex" value="nan"/>男<br>
+			<!-- 需要有name，方便form提交 -->
+			爱好：	<input type="checkbox" name="love"/>学习
+					<input type="checkbox" name="love" checked="checked"/>游戏
+					<input type="checkbox" name="love"/>乒乓球<br>
+			文件：
+					<input type="file" name="123" /><br>
+			生日：
+					<select name="birth">
+						<option value="0">请选择</option>
+						<option value="1991">1</option>
+						<option value="1992" selected="selected">2</option>
+						<option value="1993">3</option>
+					</select><br>
+			描述
+					<textarea name="desc" cols="10" rows="3"></textarea><br>
+
+			隐藏项：
+					<input type="hidden" /><br>
+			注册按钮：
+					<input type="submit" value="注册" /><br>
+			图片提交form表单:
+					<input type="image" src="shizi.jpg" width="200" height="100"/><br>
+			重置：<!-- 重新恢复到默认选择不是清空 -->
+					<input type="reset" value="重置注册" /><br>
+			按钮：
+					<input type="button" value="普通按钮"/>
+		</form>
+	</body>
+</html>
