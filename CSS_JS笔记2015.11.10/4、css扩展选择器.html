@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>css扩展选择器</title>
+        <style type="text/css">
+        /*1:关联选择器
+            div p {
+                color:red;
+            }*/
+        /*2:组合选择器
+            div, p {
+                color:red;
+            }*/
+        /*3:伪类选择器*/
+        a:link{
+            color: red;
+        }
+        a:hover{
+            color: green;
+        }
+        a:active{
+            color: blue;
+        }
+        a:visited{
+            color: yellow;
+        }
+
+        </style>
+    </head>
+    <!--
+    1:关联选择器
+        <div><p>..........</p></div>
+        设置div标签里面p标签的样式
+    2:组合选择器
+        <div>...</div>
+        <p>...</p>
+    3:伪类选择器
+        css里面提供了一些定义好的样式，可以拿过来使用
+        :link   原始状态
+        :hover  悬停状态
+        :active 点击状态
+        :visited    点击后状态
+    -->
+    <body>
+        <!-- 1:关联选择器
+        <div><p>div里面的p标签</p></div>
+        <p>p标签里面的内容</p> -->
+        <!-- 2:组合选择器
+        <div>div标签的内容</div>
+        <p>p标签里面的内容</p>-->
+        <!-- 3:伪类选择器 -->
+        <a href="#">自定义超链接样式</a>
+    </body>
+</html>

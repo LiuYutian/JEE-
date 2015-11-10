@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>js运算符</title>	
+		<script type="text/javascript" >
+			var j = 123;
+			alert(j/1000*1000);	
+			// 这里会直接运算到小数，所以不会取整。不区分整数和小数
+			
+			var str1 = "123";
+			var str2 = "456";
+			
+			alert(str1+1);		// 1231
+			alert(str1+str2);	// 123456
+			alert(str1-1);		// 执行减法122
+			
+			var stra = "abc";
+			alert(stra-1);		// NaN不是数字，类似于报错
+			
+			// Boolean参与加减， true为1， false为0
+			var bool = false;
+			alert(bool+1);		// 2
+			alert(bool-1);		// 0
+			
+			// == 与 === 区别 : ==判断值，===判断值且判断类型
+			var a = "123";
+			var b = 123;
+			alert(a==b);
+			alert(a===b);
+			
+			// 将内容直接显示到页面上document.write();
+			document.write("123123");
+			document.write("<hr>");	// 效果显示
+		</script>
+	</head>		
+</html>

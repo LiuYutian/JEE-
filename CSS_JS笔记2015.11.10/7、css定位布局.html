@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>css定位布局</title>	
+		<style type="text/css">
+			div{
+				width:200px;
+				height:150px;
+				border:2px solid blue;
+			}
+			
+			#div1 {
+				background-color:red;
+				/*position:absolute;
+				top:50px;
+				left:80px;*/
+				position:relative;
+				top:80px;
+				left:120px;
+			}
+			#div2 {
+				background-color:green;
+				/*width:220px;
+				height:150px;*/
+			}
+			#div3 {
+				background-color:orange;
+			}
+		</style>
+	</head>	
+	<!-- 
+		css布局定位：position：
+			absolute：绝对定位，将对象从文档流中拖出
+			可以使用top，bottom，left，right等属性进行定位。
+			relative：相对定位，不会拖出文档流。
+			也可以使用top，bottom，left，right等属性进行定位。
+	 -->
+	<body>
+		<div id="div1">aaaaaaaaaaaaaa</div>
+		<div id="div2">bbbbbbbbbbbbbb</div>
+		<div id="div3">cccccccccccccc</div>
+	</body>
+</html>

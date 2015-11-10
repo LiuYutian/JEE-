@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>script标签位置</title>
+	</head>	
+	<body>
+		<input type="text" name="name" id="nameid" value="aaa"/>
+	</body>
+	<!-- 
+		本质上哪里都可以，但是如果要获取部分元素，则需要放到标签定义的后面，
+		建议放到</body>标签的后面，原因是因为html代码是从上而下解析的，所以建议放到下面
+	 -->
+	<script type="text/javascript">
+		alert("123");
+		var str = document.getElementById("nameid");
+		alert(str.value);
+	</script>
+</html>

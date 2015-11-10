@@ -1,0 +1,25 @@
+<html>
+    <!-- 
+        1、在每个html标签上都有一个属性style，把css和html结合在一起。
+        2、使用html的一个标签实现<style>标签，写在head里面。
+        3、在style标签里面，使用语句@import url(文件路径); 部分浏览器不支持
+        4、使用头标签link，引入外部css文件
+     -->
+	<head>
+		<title>css与html的结合使用</title>
+        <style type="text/css">
+            /*span {
+                 background-color:green;
+                 color:red;
+            }*/
+        </style>
+        <style type="text/css"> 
+            /*@import url(1、CSS与HTML结合方式.css);*/
+        </style>
+        <link rel="stylesheet" type="text/css" href="1、CSS与HTML结合方式.css">
+	</head>
+    <body>
+	   <div style="background-color:red;color:green;">天之道，损有余而补不足，是故虚胜实，不足胜有余。</div><br>
+       <span>天之道，损有余而补不足，是故虚胜实，不足胜有余。</span>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>css浮动布局</title>
+		<style type="text/css">
+			div {
+				width:200px;
+				height:150px;
+				border: 2px solid blue;
+			}
+			
+			#div1{
+				float:left;
+			}
+		</style>
+	</head>
+	<!-- 
+	关键字：float 
+		总结：在IE下，如果使用float，使用控件将会浮动，不会脱离文档流对象。
+			left：文本流对象的右边
+			right：文本流对象的左边
+		在火狐与谷歌浏览器下，会脱离文档流对象，效果会产生覆盖的现象。被使用对象将会向左或向右浮动
+	-->
+	<body>
+		<div id="div1">aaaaaaaaaaaaaa</div>
+		<div id="div2">bbbbbbbbbbbbbb</div>
+		<div id="div3">cccccccccccccc</div>
+	</body>
+</html>

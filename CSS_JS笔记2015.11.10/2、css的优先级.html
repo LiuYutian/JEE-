@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <!-- 
+            由上到下，由外到内。优先级由低到高 — — 传智播客
+            1、内联样式高于内部样式
+            2、内部样式高于外部样式
+            3、同级样式，有最后解析的优先级高
+            4、！important优先级最高
+            选择器格式：
+                选择器名称 {
+                    属性名：属性值；
+                    属性名：属性值；
+                }
+         -->
+        <title>css的优先级</title>
+        <style type="text/css">
+            div {
+                background-color:gray;
+                color:white;
+                color:red;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="2、css的优先级.css">
+    </head>
+    <body>
+        <div style="background-color:red;color:green;">天之道，损有余而补不足，是故虚胜实，不足胜有余。</div>
+        <div>天之道，损有余而补不足，是故虚胜实，不足胜有余。</div>
+        <div id="san">天之道，损有余而补不足，是故虚胜实，不足胜有余。</div>
+    </body>
+</html>

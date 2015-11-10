@@ -1,0 +1,41 @@
+<html>
+    <!-- 
+        1、标签选择器 
+        2、class 选择器
+        3、id 选择器
+        这三个选择器的优先级：行内样式 > id > class > 标签
+    -->
+    <head>
+        <title>css的选择器</title>
+        <style type="text/css">
+            div {
+                background-color: red;
+            }
+
+            p {
+                background-color: green;
+            }
+
+            .classs {
+                background-color: yellow;
+            }
+
+            #idid {
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div>divdivdivdivdivdivdivdivdivdivdiv</div>
+        <p>pppppppppppppppppppppppppppppp</p>
+        <hr>
+
+        <div class="classs">hhhhhhhhhhhhhhhhh</div>
+        <span class="classs">hhhhhhhhhhhhhhhhh</span>
+
+        <hr>
+        <div id="idid" >idididididddidiididiidid</div>
+
+        <div id="idid" class="class">idclassdiv</div>
+    </body>
+</html>

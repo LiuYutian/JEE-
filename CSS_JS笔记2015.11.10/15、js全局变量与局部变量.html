@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>js全局变量与局部变量</title>	
+		
+		<script type="text/javascript">
+			// 全局变量 在方法内部，标签内部，其他script标签都可以调用到。
+			var aa = 10;
+			
+			// 定义一个方法
+			function test1() {
+				// 局部变量
+				var nn = 11;	
+				alert("内部" + aa);
+				alert("nn内部" + nn);
+			}	
+			
+			alert("外部nn" + nn);	// 访问到局部变量nn
+			
+			alert("外部" + aa);
+			test1();
+		</script>
+		<script type="text/javascript">
+			alert(aa);
+		</script>
+	</head>
+	<body></body>
+</html>
