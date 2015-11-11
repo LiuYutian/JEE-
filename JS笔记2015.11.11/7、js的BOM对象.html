@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>js的BOM对象</title>
+		<script type="text/javascript">
+			// 获取浏览器信息navigator
+			
+			// 浏览器名称
+			document.write("appName：" + navigator.appName);
+			
+			// 获取屏幕信息
+			document.write("<hr>");
+			document.write("screen.width：" + screen.width);
+			document.write("<br>");
+			document.write("screen.height：" + screen.height);
+					
+			// 请求地址 可以获取，赋值即为设置。
+			document.write("<hr>");
+			document.write("href：" + location.href);
+			document.write("<br>");
+
+			// 设置页面跳转
+			function action() {
+				location.href="http://www.baidu.com";
+			}
+
+			// 获取请求记录
+			// 加载history列表的前一个url(上一个页面)
+			// document.write(history.back());
+			// 加载history列表的后一个url（下一个页面）
+			// document.write(history.forward());
+			// 加载history列表的任意一个url传值1下一个，-1上一个
+			// document.write(history.go(-1));
+
+		</script>
+	</head>
+	<body>
+		<input type="button" value="百度" onclick="action();" />
+	</body>
+</html>

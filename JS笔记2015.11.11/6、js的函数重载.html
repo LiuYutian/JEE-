@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>js函数重载</title>
+		<script type="text/javascript">
+			// js函数重载
+			// 重载：函数、方法，同名，不同参数。
+			// 不存在
+
+			function add1(a, b) {
+				return a + b;
+			}
+			function add1(a, b, c) {
+				return a + b + c;
+			}
+			function add1(a, b, c, d) {
+				return a + b + c + d;
+			}
+			
+			// 模拟重载
+			function add1(){
+				var value = 0;
+				
+				for(var i = 0; i < arguments.length; i++) {
+					value += arguments[i];
+				}
+				
+				return value;
+			}
+			
+			alert(add1(1, 2));
+			alert(add1(1, 2, 3));
+			alert(add1(1, 2, 3, 4));
+			
+			// 发生了方法定义的覆盖
+			
+		</script>
+	</head>
+	<body></body>
+</html>

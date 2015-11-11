@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>js的document对象</title>
+	</head>
+
+	<body>
+		<span id="spanid">span内容</span>
+		<div name="divname">div1</div>
+		<div name="divname">div2</div>
+		<div>div3</div>
+		<input type="text" name="name11" value="wwww"/>
+	</body>
+
+	<script type="text/javascript">
+		// DOM 文档对象模型
+		// 文档：指html文档
+		// 对象：提供属性方法
+		// 模型：使用方法，属性；操作文档
+		
+		// document方法
+		// 通过ID获取元素
+		document.write("我是js输入内容<hr>");
+		// 获取元素值
+		alert(document.getElementById("spanid").innerHTML);
+		// 设置元素值
+		document.getElementById("spanid").innerHTML = "值";
+		
+		// 通过name获取元素
+		var arr = document.getElementsByName("divname");
+		for(var i = 0; i < arr.length; i++) {
+			alert(arr[i].innerHTML + "通过name获取元素，并输出元素的值");	
+		}
+		
+		// 通过标签获取元素		
+		var arr1 = document.getElementsByTagName("div");
+		for(var i = 0; i < arr1.length; i++) {
+			alert(arr1[i].innerHTML + "通过标签名获取元素，并输出元素值");
+		}
+		
+		// 获取文本框值
+		var input1 = document.getElementsByName("name11")[0];
+		alert(input1.value + "   文本框");
+		
+		var input2 = document.getElementsByTagName("input")[0];
+		alert(input2.value + "    ByTagName");
+	</script>
+</html>

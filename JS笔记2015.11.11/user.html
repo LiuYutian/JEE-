@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>用户信息</title>
+	</head>
+	<body>
+		<table border="1" bordercolor="blue">
+			<tr>
+				<td>操作</td>	
+				<td>编号</td>	
+				<td>姓名</td>	
+			</tr>	
+			<tr>
+				<td><input type="button" value="选择" onclick="s1('100', '东方不败');"/></td>	
+				<td>100</td>	
+				<td>东方不败</td>	
+			</tr>	
+			<tr>
+				<td><input type="button" value="选择" onclick="s1('101', '岳不群');"/></td>	
+				<td>101</td>	
+				<td>岳不群</td>	
+			</tr>	
+			<tr>
+				<td><input type="button" value="选择" onclick="s1('102', '林平之');"/></td>	
+				<td>102</td>	
+				<td>林平之</td>	
+			</tr>	
+		</table>
+	</body>
+	<script type="text/javascript">
+		function s1(num1, name1){
+			// 需要将值赋值到window
+			// 跨页面操作 opener
+			var win = window.opener;	// 得到创建它的window
+			// Chrome 会出错：它不支持访问本地文件，所以不能访问到。
+			win.document.getElementById("numid").value = num1;
+			win.document.getElementById("nameid").value = name1;
+			
+			window.close();
+		}
+	</script>
+</html>

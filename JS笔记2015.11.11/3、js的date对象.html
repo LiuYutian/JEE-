@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>js date类</title>
+		<script type="text/javascript">
+			// 获取系统当前时间
+			var date = new Date();
+			document.write(date);
+			
+			// 日期格式化
+			document.write("<br>");
+			document.write(date.toLocaleString());
+			
+			// 获取年getYear()得到115的原因应该是：为了避免千年虫问题，多输出1以示区分。
+			document.write("<hr>");
+			document.write(date.getYear());	
+			document.write("<br>");
+			document.write(date.getFullYear() + "年");
+			
+			// 获取当前月的方法， 返回值[0, 11]这里需要+1
+			document.write("<hr>");
+			document.write(date.getMonth()+1 + "月");	
+			
+			// 获取当前日的方法， getDay一周中的某一天（0-6），即周几
+			// 周末是0
+			document.write("<hr>");
+			document.write(date.getDay() + "周");	
+			// 获取当前日的方法， getDate一月中的一天， 即几号
+			document.write("<br>");
+			document.write(date.getDate() + "日");	
+			
+			// 获取当前的小时
+			document.write("<hr>");
+			document.write(date.getHours() + "时");
+
+			// 获取当前的分钟
+			document.write("<hr>");
+			document.write(date.getMinutes() + "分");
+						
+			// 获取当前的秒
+			document.write("<hr>");
+			document.write(date.getSeconds() + "秒");
+			
+			// 获取毫秒数1970.1.1至今的毫秒数
+			// 应用场景：处理缓存
+			document.write("<hr>");
+			document.write(date.getTime() + "毫秒");
+			
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>js数组</title>
+		<script type="text/javascript">
+			// 数组创建方式有三种：
+			var arr1 = [1, 2, 3];
+			var arr2 = new Array(3);
+			var arr3 = new Array(1, 3 ,2);
+			var arrNull = [];
+			
+			// 属性：length 长度
+			document.write(arr1.length);
+			
+			// 方法
+			// 数组拼接
+			document.write("<hr>")
+			document.write(arr1.concat(arr3));
+			
+			// 分隔数组（字符分割）显示效果的分隔符
+			document.write("<hr>");
+			document.write(arr1.join("-"));
+			
+			// 向数组末尾追加一个/多个元素 返回值为新数组长度，原数组发生变化
+			// 可以传入多个参数
+			document.write("<hr>");
+			arr1.push(10);
+			document.write(arr1);
+			document.write("<br>");
+			arr1.push(10, 100);
+			document.write(arr1);
+			document.write("<hr>");
+			// push方法传入数组,相当于将数组当成元素插入，即二维数组
+			var arr4 = ["aaa", "bbb", "ccc"];
+			var arr5 = ["111", "222"];
+			document.write(arr4.push(arr5));	// 4个元素
+			document.write(arr4);	// 最后一个元素为["111", "222"]
+			
+			// 删除并返回最后一个元素
+			document.write("<hr>");
+			document.write(arr4.pop());
+			document.write("<br>");
+			document.write(arr4);
+			
+			// 颠倒数组中元素顺序，并返回
+			document.write("<hr>");
+			document.write(arr5);			
+			document.write("<br>");
+			document.write(arr5.reverse());
+			
+			// 
+		</script>
+	</head>
+	<body></body>
+</html>

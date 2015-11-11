@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>全局函数</title>
+		<script type="text/javascript">
+			// 全局函数
+			
+			// 执行js代码
+			eval("alert('执行代码')");
+			
+			// 字符编码，解码
+			var str = "数据";
+			// 编码
+			var codeStr = encodeURI(str);
+			document.write(codeStr);
+			document.write("<br>");
+			// 解码
+			var deCodeStr = decodeURI(codeStr);
+			document.write(deCodeStr);
+			
+			// 判断字符串是否为数字, 是数字为false
+			var num = "123";
+			alert(isNaN(num));
+			
+			// 字符串转换为整数
+			var string = "123123";
+			alert(parseInt(string) + 1);
+		</script>
+	</head>
+	<body></body>
+</html>
