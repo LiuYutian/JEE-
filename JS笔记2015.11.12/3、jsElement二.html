@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>jsElement二</title>
+	</head>
+	<body>
+		<ul id="ulid">
+			<li>aaa</li>	
+			<li>bbb</li>	
+			<li>ccc</li>	
+		</ul>
+	</body>
+	<script type="text/javascript">
+		// 获取到ul下面的所有子标签(子元素)
+		// 获取ul标签
+		var ulElement = document.getElementById("ulid");
+		// 获取ul下面的子标签childNodes兼容性差
+		var lis = ulElement.childNodes;
+		// 获取标签下子标签的有效方法。
+		var liss = ulElement.getElementsByTagName("li");
+		
+		alert(liss.length);
+	</script>
+</html>

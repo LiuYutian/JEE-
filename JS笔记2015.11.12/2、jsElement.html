@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>jsElement</title>
+	</head>
+	<body>
+		<input type="text" class="id" id="inputid" value="aaa"/>
+	</body>
+	<script type="text/javascript">
+		// 通过dom对象获取element对象。
+		// 获取属性的值
+		var input1 = document.getElementById("inputid");
+		
+		// 部分值是不能取得，比如input1.class是会出错的。
+		// ie 取不出来class的属性值
+		alert(input1.getAttribute("class"));
+		
+		// 设置属性的值，无返回值
+		input1.setAttribute("value", "500");
+		
+		// 删除属性；不能删除value
+		input1.removeAttribute("class");
+	</script>
+</html>

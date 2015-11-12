@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>动态显示</title>
+	</head>
+	<body>
+		<div id="times">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		function getD1() {
+			// 当前时间
+			var date = new Date();
+			
+			// 格式化
+			var d1 = date.toLocaleString();
+			// 获取div
+			var div1 = document.getElementById("times");
+			
+			// div写入时间
+			div1.innerHTML = d1;
+		}
+		
+		// 使用定时器
+		setInterval("getD1();", 1000);
+	</script>
+</html>

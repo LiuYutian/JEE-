@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>省事联动</title>
+	</head>
+	<body>
+		<!-- 这里可以传递参数this.value当前选择的值 -->
+		<select id="country" onchange="change(this.value);">
+			<option value="0">---请选择---</option>
+			<option value="中国">中国</option>
+			<option value="美国">美国</option>
+			<option value="德国">德国</option>
+			<option value="日本">日本</option>
+		</select>
+		<select id="city">
+			
+		</select>
+		<select></select>
+	</body>
+	<script type="text/javascript">
+		// 创建数组存储数据
+		var arr = new Array(4);
+		arr[0] = ["中国", "南京", "抚州", "临洮", "日喀则", "哈密"];
+		arr[1] = ["美国", "华盛顿", "底特律", "休斯顿", "纽约"];
+		arr[2] = ["德国", "慕尼黑", "柏林", "法兰克福", "狼堡"];
+		arr[3] = ["日本", "北海道", "东京", "大阪", "广岛", "长崎"];
+			
+		var city1 = document.getElementById("city");
+		function change(val) {
+			// 清楚数据
+			var options = city1.getElementsByTagName("option");
+			for(var i = 0; i < options.length; i++) {
+				city1.removeChild(options[i]);
+				i--;
+			}
+	
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i][0] == val) {
+					for(var j = 1; j < arr[i].length; j++) {
+						var option = document.createElement("option");
+						option.innerHTML = arr[i][j];
+						city1.appendChild(option);
+					}
+				}
+			}
+		}
+	</script>
+</html>

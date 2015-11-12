@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>innerHTML</title>
+		<style type="text/css" >
+			#divid {
+				width:200px;
+				height:150px; 
+				border:2px dashed red;
+			}
+		</style>
+	</head>
+	<!--
+		innerHTML：这个属性不是dom的组成部分，但是大多数浏览器都支持的属性
+		第一个作用：获取文本内容
+		第二个作用：向标签里面设置内容（可以是html代码）
+	-->
+	<body>
+		<span id="sid">span内容</span>
+		<div id="divid">div内容</div>
+	</body>
+	<script type="text/javascript">
+		// 获取标签中的文本内容
+		var span1 = document.getElementById("sid");
+		alert(span1.innerHTML);
+		
+		// 向div里面设置内容（可以是html代码）
+		var div1 = document.getElementById("divid");
+		//div1.innerHTML = "<h1>AAA</h1>";
+		
+		// 向div中设置表格
+		var tab1 = "<table border='1'><tr><td>aaa</td><td>aaa</td><td>aaa</td></tr><tr><td>bbb</td><td>bbb</td><td>bbb</td></tr></table>";
+		
+		var tab2 = "<table>";
+		
+		tab += "</table>";
+		
+		div1.innerHTML = tab;
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>jsNode对象</title>
+	</head>
+	<body>
+		<span id="spanid">span内容</span>	
+		
+		<ul id="ulid">
+			<li id="li1">1111</li>
+			<li id="li2">2222</li>
+			<li id="li3">3333</li>
+			<li id="li4">4444</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		// 获取标签对象
+		var span1 = document.getElementById("spanid");
+		alert(span1.nodeType);	// 1
+		alert(span1.nodeName);	// SPAN
+		alert(span1.nodeValue);	// null
+		
+		// 属性
+		var id1 = span1.getAttributeNode("id");
+		alert(id1.nodeType);	// 2
+		alert(id1.nodeName);	// id
+		alert(id1.nodeValue);	// spanid
+		
+		// 获取文本
+		var text1 = span1.firstChild;
+		alert(text1.nodeType);	// 3
+		alert(text1.nodeName);	// #text
+		alert(text1.nodeValue);	// 内容
+		
+		// 获取li1
+		// var li1 = document.getElementById("li1");
+		// 得到父节点
+		// var ul1 = li1.parentNode;
+		
+		// 得到ul
+		// var ul1 = document.getElementById("ulid");
+		// 获取第一个子节点chrome，Firefox不支持
+		// var li1 = ul1.firstChild;
+		// 获取最后一个子节点chrome，Firefox不支持
+		// var lilast = ul1.lastChild;
+		
+		// 同辈节点
+		var li3 = document.getElementById("li3");
+		var li4 = li3.nextSibling;
+		var li2 = li3.previousSibling;
+		alert(li4.id);
+		alert(li2.id);
+	</script>
+</html>

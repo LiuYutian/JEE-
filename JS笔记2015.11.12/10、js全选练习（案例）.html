@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>全选练习</title>
+	</head>
+	<body>
+		<input type="checkbox" id="boxid" onclick="selAllNo();"/>全选/全不选
+		<br/>
+		<input type="checkbox" name="love"/>篮球
+		<input type="checkbox" name="love"/>排球
+		<input type="checkbox" name="love"/>羽毛球
+		<input type="checkbox" name="love"/>乒乓球
+		<br/>
+		<input type="button" value="全选" id="love" onclick="selAll();">
+		<input type="button" value="全不选" id="love" onclick="selNo();"/>
+		<input type="button" value="反选" id="love" onclick="selOther();"/>
+	</body>
+	<script type="text/javascript">
+		// 实现全选操作
+		function selAll() {
+			var loves = document.getElementsByName("love");
+			for(var i = 0; i < loves.length; i++) {
+				var love1 = loves[i];	// 每一个复选框
+				// 设置属性为true
+				love1.checked = true;
+			}
+		}
+		
+		// 实现全不选
+		function selNo() {
+			var loves = document.getElementsByName("love");
+			for(var i = 0; i < loves.length; i++) {
+				var love1 = loves[i];	// 每一个复选框
+				// 设置属性为true
+				love1.checked = false;
+			}
+		}
+		
+		// 实现反选
+		function selOther() {
+			var loves = document.getElementsByName("love");
+			for(var i = 0; i < loves.length; i++) {
+				var love1 = loves[i];	// 每一个复选框
+				// 设置属性为true
+				love1.checked = !love1.checked;
+			}
+		}
+		
+		// 实现全选/全不选
+		function selAllNo() {
+			if(document.getElementById("boxid").checked) {
+				selAll();
+			} else {
+				selNo();
+			}
+		}
+	</script>
+</html>

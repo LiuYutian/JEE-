@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>左右选择框</title>
+	</head>
+	<body>
+		<div style="float:left;margin-right:100px;">
+			<select id="left" style="width:100px;height:100px;" multiple="multiple">
+				<option>111</option>
+				<option>222</option>
+				<option>333</option>
+				<option>444</option>
+				<option>555</option>
+			</select><br>
+			<input type="button" value="选中添加到右边" onclick="selToRight();"/><br>
+			<input type="button" value="全部添加到右边" onclick="allToRight();"/>
+		</div>
+		<div style="float:left">
+			<select id="right" style="width:100px;height:100px;" multiple="multiple">
+				<option>222</option>
+			</select><br>
+			<input type="button" value="选中添加到左边" onclick="selToLeft();"/><br>
+			<input type="button" value="全部添加到左边" onclick="allToLeft();"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 选中添加到右边
+		function selToRight() {
+			// 得到select标签
+			var selectLeft = document.getElementById("left");
+			var selectRight = document.getElementById("right");
+			// 得到选中option
+			var options1 = selectLeft.getElementsByTagName("option");
+			// 遍历数组
+			for(var i = 0; i < options1.length; i++) {
+				if(options1[i].selected) {
+					selectRight.appendChild(options1[i]);
+					i--;
+				}
+			}
+		}
+		
+		// 全部添加到右边
+		function allToRight() {
+			// 得到select标签
+			var selectLeft = document.getElementById("left");
+			var selectRight = document.getElementById("right");
+			// 得到选中option
+			var options1 = selectLeft.getElementsByTagName("option");
+			// 遍历数组
+			for(var i = 0; i < options1.length; i++) {
+					selectRight.appendChild(options1[i]);
+					i--;
+			}
+		}
+		
+		// 选中添加到左边
+		function selToLeft() {
+			// 得到select标签
+			var selectLeft = document.getElementById("left");
+			var selectRight = document.getElementById("right");
+			// 得到选中option
+			var options1 = selectRight.getElementsByTagName("option");
+			// 遍历数组
+			for(var i = 0; i < options1.length; i++) {
+				if(options1[i].selected) {
+					selectLeft.appendChild(options1[i]);
+					i--;
+				}
+			}
+		}
+		
+		// 全部添加到左边
+		function allToLeft() {
+			// 得到select标签
+			var selectLeft = document.getElementById("left");
+			var selectRight = document.getElementById("right");
+			// 得到选中option
+			var options1 = selectRight.getElementsByTagName("option");
+			// 遍历数组
+			for(var i = 0; i < options1.length; i++) {
+					selectLeft.appendChild(options1[i]);
+					i--;
+			}
+		}
+	</script>
+</html>

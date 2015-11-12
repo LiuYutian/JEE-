@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>js删除,替换,复制,粘贴节点</title>
+	</head>
+	<body>
+		<ul id="ulid">
+			<li id="liid1">1</li>	
+			<li id="liid2">2</li>	
+			<li id="liid3">3</li>			
+		</ul>
+		<input type="button" value="delect" onclick="removel();"/>
+		<input type="button" value="替换" onclick="rep();"/>
+		<input type="button" value="复制" onclick="clone();"/>
+		<div id="div"></div>
+	</body>
+	<script type="text/javascript">
+		function removel() {
+			var li2 = document.getElementById("liid2");
+			var ul = document.getElementById("ulid");
+			
+			// 通过父节点删除，自己不能删除。
+			ul.removeChild(li2);
+		}
+		
+		// 替换
+		function rep() {
+			var ul = document.getElementById("ulid");
+			var li3 = document.getElementById("liid3");
+			var linew = document.createElement("li");
+			linew.innerHTML = "NEW";
+			
+			ul.replaceChild(linew, li3);			
+		}
+		
+		// 复制,粘贴节点
+		function clone() {
+			var ul = document.getElementById("ulid");
+			var ulCopy = ul.cloneNode(true);
+			var div = document.getElementById("div");
+			div.appendChild(ulCopy);
+		}
+	</script>
+</html>

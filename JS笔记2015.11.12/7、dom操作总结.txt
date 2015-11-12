@@ -1,0 +1,11 @@
+获取节点使用方法：
+	getElementById();				通过节点id属性，查找对应节点
+	getElementsByName();		通过节点name属性，查找对应节点
+	getElementsByTagName();	通过节点名称，查找对应节点
+插入节点的方法：
+	insertBefore();		在某个节点钱插入
+	appendChild();		在末尾添加节点，剪切黏贴
+删除节点方法：
+	removeChild();		通过父节点删除
+替换节点方法：
+	replaceChild();		通过父节点替换

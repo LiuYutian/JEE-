@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>js在末尾添加节点</title>
+	</head>
+	<body>
+		<ul id="ulid">
+			<li>111</li>	
+			<li>222</li>	
+			<li>333</li>	
+			<li>444</li>	
+		</ul>
+		<button onclick="add1();">add</button>
+	</body>
+	<script type="text/javascript">
+		function add1() {
+			var ul1 = document.getElementById("ulid");
+			var li1 = document.createElement("li");
+			li1.innerHTML = 5555;
+			ul1.appendChild(li1);
+		}
+		//add1();
+	</script>
+</html>
