@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.example.org/schema" 
+	xsi:schemaLocation="http://www.example.org/schema schema.xsd"
+	id1="123">
+	<name>张三</name>
+	<name>a</name>
+	<age>20</age>
+	<!-- <sex></sex> -->
+
+	<!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 表示xml是一个被约束文件 
+		xmlns="http://www.example.org/schema" 是targetNamespace 
+		xsi:schemaLocation="http://www.example.org/schema schema.xsd" targetNamespace 空格 约束文档的地址路径 -->
+</person>

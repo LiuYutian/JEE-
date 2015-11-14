@@ -1,0 +1,17 @@
+1、解析xml有两种技术 dom和sax
+	dom方式	根据xml的层级结构在内存中分配一个树形结构
+			把xml中标签，属性，边读边解析
+	sax方式	事件驱动，边读边解析
+			在Javax.xml.parsers包里面
+			SAXParser	抽象类
+				通过SAXParserFactory.newSAXOarser()得到实例
+				parse(File f, DefaultHandler dh);
+				第一个参数：xml的路径
+				第二个参数：事件处理器
+			SAXParserFactory	抽象类
+				通过newInstance()得到实例
+			通过事件驱动，边解析，边执行事件
+			当解析到开始标签时，执行startElement()方法，参数qName:返回标签名称
+			当解析到标签内容时，执行characters()方法，通过string的构造方法返回内容
+			当解析到结束标签时，执行endElement()方法，参数qName，返回标签名称
+			sax方式不能实现增删改，只能做查询操作

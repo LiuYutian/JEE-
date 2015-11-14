@@ -1,0 +1,15 @@
+可以直接获取到某个元素
+第一种形式：/AAA/DDD/BBB：表示一层一层的，AAA下面DDD下面的BBB
+第二种形式：//BBB：表示和这个名词相同，宝石只要名称是BBB，都得到
+第三种形式：/*：表示所有元素
+第四种形式：	BBB[1]:表示第一个BBB元素
+		BBB[last()]:表示最后一个BBB元素
+第五种形式：//BBB[@id]：表示只要BBB元素上面有id属性，都得到
+第六种形式：//BBB[@id="b1"]：表示只要名称是BBB，在BBB上面有id属性，并且id值为b1，都得到
+默认情况下dom4j，不支持xpath；
+	第一步需要引入xpath.jar包
+在dom4j里面提供了两个方法，用来支持xpath
+	selectNodes("xpath表达式");
+		获取多个节点
+	selectSingleNode("xpath表达式");
+		获取一个节点

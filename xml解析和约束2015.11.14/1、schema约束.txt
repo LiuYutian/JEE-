@@ -1,0 +1,5 @@
+dtd语法：<!ELEMENT 元素名称 约束>
+schema符合xml的语法，xml语句
+一个xml中只有一个dtd，但是可以有多个schema，多个schema用命名空间区分(包名)
+dtd有PCDATA类型，但是schema可以支持更多的类型。比如整数类型。
+schema语法更加复杂，但是更加全面

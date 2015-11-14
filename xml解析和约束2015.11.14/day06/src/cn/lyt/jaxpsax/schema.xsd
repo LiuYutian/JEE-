@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/schema"
+	xmlns:tns="http://www.example.org/schema" elementFormDefault="qualified">
+	<!-- 1、xmlns 表示当前xml文件是一个约束文件 2、targetNamespace 使用schema约束文件，直接通过这个地址引入约束文件 
+		3、elementFormDefault="qualified" 质量良好 -->
+	<!-- 步骤1、看xml中有多少个元素 -->
+	<!-- 步骤2、看简单元素和复杂元素 -->
+	<!-- 步骤3、简单元素写在复杂元素里面 -->
+	<element name="person">
+		<complexType>
+			<sequence>
+			<!-- <all> -->
+			<!-- <choice> -->
+				<element name="name" type="string" maxOccurs="unbounded"></element>
+				<element name="age" type="int"></element>
+			<!-- </choice> -->
+			<!-- </all> -->
+			</sequence>
+			<attribute name="id1" type="int" use="required"></attribute>
+		</complexType>
+	</element>
+	<!-- 步骤4、在被约束文件里面引入约束文件 -->
+	
+	<!-- 
+		约束标签
+		<sequence>：表示元素的出现顺序
+		<all>：元素只能出现一次
+		<choice>：元素只能出现其中一次
+		<maxOccurs="unbounded">：表示元素的出现册数
+		<any>：表示任意元素
+		约束属性
+		attribute需要写在复杂元素里面，写在</complexType>之前
+		<attribute name="id1" type="int" use="required">
+			- name：属性名称
+			- type：属性类型 Int string
+			- use：属性是否必须出现 required必须出现
+	 -->
+</schema>
