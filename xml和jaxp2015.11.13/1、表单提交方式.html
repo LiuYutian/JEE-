@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<!-- 事件方法：
+		1、onclick：鼠标点击事件
+		2、onchange：改变内容事件(一般和select一起使用)
+		3、onfocus：得到焦点
+		4、onblur：	失去焦点
+	 -->
+	<body>
+		<form id="form1">
+			<input type="text" name="username" value="请输入" onfocus="focuss();" onblur="blurs();"/><br/>
+			<input type="button" value="提交" onclick="form1();"/>
+			<hr>
+			<!-- 可以直接写入参数 -->
+			<a href="http://www.baidu.com?username=123">使用超链接提交</a>
+		</form>
+	</body>
+	<script type="text/javascript">
+		// 实现提交
+		function form1() {
+			// 获取form
+			var form1 = document.getElementById("form1");
+			// 设置action
+			form1.action="http://www.baidu.com";
+			// 提交表单
+			form1.submit();
+		}
+		
+		// 方法名不能使用focus
+		function focuss() {
+			var texts = document.getElementsByName("username")[0];
+			texts.value = "";
+			console.log("得到焦点");
+		}
+		
+		// 方法名不能使用blur
+		function blurs() {
+			var texts = document.getElementsByName("username")[0];
+			if(texts.value==""){
+				texts.value = "请输入";
+			}
+			console.log("失去焦点");
+		}
+	</script>
+</html>

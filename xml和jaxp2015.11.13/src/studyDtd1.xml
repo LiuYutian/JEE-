@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 引入方式1 -->
+<!-- <!DOCTYPE person SYSTEM "studyDtd1.dtd"> -->
+<!-- 引入方式2 -->
+<!DOCTYPE person [
+	<!ELEMENT person (name+, age?, sex*, school, birthday)>
+	
+	<!ELEMENT name (#PCDATA)>
+	<!ATTLIST name
+		ID3 ID #REQUIRED
+	>
+	
+	<!ELEMENT age (#PCDATA)>
+	<!ATTLIST age
+		ID2 (AA|BB|CC) #REQUIRED
+	>
+	
+	<!ELEMENT sex (#PCDATA)>
+	<!ATTLIST sex
+		ID4 CDATA #FIXED "ABC"
+	>
+	
+	<!ELEMENT school ANY>
+	<!ATTLIST school
+		ID5 CDATA "WWW"
+	>
+	
+	<!ELEMENT birthday (#PCDATA)>
+	<!ATTLIST birthday 
+		ID1 CDATA #REQUIRED
+	>
+	
+	<!ENTITY TEST "info">
+]>
+<!-- 引入方式3引入外部dtd文件 -->
+<!-- <!DOCTYPE 根元素 PUBLIC "DTD名称" "DTD文档的URL"> -->
+<!-- 
+	标签属性：
+		语法：<!ATTLIST 元素名称 
+				属性名称 属性类型 属性约束
+			>
+		属性类型：
+			CDATA:字符串
+			枚举类型: 表示只能在一定的范围内出现值，但是只能每次出现其中的一个
+				(aaa|bbb|ccc|ddd)
+			ID:值只能是字母或者下划线开头,不能重复使用ID名称
+		属性约束：
+			#REQUIRED 必须存在
+			#IMPLIED 可有可无
+			#FIXED	固定值	
+				ID4 CDATA #FIXED "ABC"
+			直接值：不写属性，使用直接值，写了属性，使用设置的值
+	实体定义：
+		语法：<!ENTITY 实体名称 "实体值"
+		<!ENTITY TEST "ASD">
+		使用实体 &实体名称; 比如&TEST;
+		注意：定义实体需要写在内部dtd里面，如果写在外部的dtd里面，有些浏览器将取不到值
+ -->
+<person>
+	<name ID3="S1">张三1</name>
+	<name ID3="S2">张三2</name>
+	<age ID2="AA">20</age>
+	<sex ID4="ABC">12&TEST;</sex>
+	<school ID5="TTT">asdf</school>
+	<birthday ID1=":">2015</birthday>
+	<!-- <aa>111</aa> -->
+	<!-- dtd的三种引入方式  -->
+</person>

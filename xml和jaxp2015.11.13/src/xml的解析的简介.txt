@@ -1,0 +1,29 @@
+xml是标记型文档
+	js使用dom解析标记型文档
+		根据html的层级结构，在内存中分配一个树型结构，把html的标签，属性和文本都封装成对象
+		document对象，element对象，属性对象，文本对象，node节点对象
+	xml的解析方式（技术）：dom 和 sax 
+		dom ： 使用dom方式解析xml时候，如果文件过大，会造成内存溢出；使用dom优点：方便实现曾删改查操作。
+		sax ： 采用事件驱动，边读边解析。从上到下，一行一行的解析，解析到某一个对象，把对象名称返回
+			-优点：使用sax方式，不会造成内存溢出，实现查询
+			-缺点：使用sax方式，不能实现增删改操作。
+	想要解析xml，首先需要解析器
+		不同的公司和组成提供了 针对dom和sax方式的解析器，通过api方式提供
+		dom和sax解析器	sun公司：  jaxp javax.xml.parsers
+					dom4j组织：dom4j（使用最多）
+					jdom组织：jdom
+		jaxp:
+			dom:DocumentBuilder:解析器类
+					- 抽象类，通过DocumentBuilderFactory.newDocumentBuilder(); 方法获取
+						通过parse()解析xml，传入文件路径返回值为document类型
+						document里面的方法有：
+							getElementsByTayName()
+							createElement()
+							createTextNode()
+							appendChild()
+							removeChild()
+							getParentNode()
+				DocumentBuilderFactory：解析器工厂
+					- 抽象类， 通过newInstance(); 方法获取
+			sax:SAXParser：解析器类
+				SAXParserFactory：解析器工厂

@@ -1,0 +1,23 @@
+<!ELEMENT person (name, age, sex, school)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT sex EMPTY>
+<!ELEMENT school ANY>
+<!-- 
+	1、语法 <!ELEMENT 元素名 约束>
+	2、简单元素：没有子元素的元素
+		<!ELEMENT name (#PCDATA)>
+		约束name是字符串类型
+		EMPTY：元素为空
+		ANY:任意
+	3、复杂元素：
+		<!ELEMENT person (name, age, sex, school)>
+		<!ELEMENT 元素名称 (子元素)>
+		+：	表示一次或者多次
+		?：	表示0次或者1次
+		*：	表示任意次数
+		子元素之间通过逗号隔开
+			表示元素出现的顺序
+		子元素之间通过|隔开
+			表示括号内元素只能出现其中的任意一个
+ -->

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk"?>
+<!-- dtd文件引入 -->
+<!DOCTYPE person SYSTEM "dtd入门.dtd">
+<person>
+	<name>zhangsan</name>
+	<age>20</age>
+	<xxx>2</xxx>
+</person>
+
+<!-- 
+	dtd文件的书写
+	（1）、看xml中有多少个元素，有多少个元素，就在dtd文件中写多少个<!ELEMENT>
+	（2）、判断元素是简单元素还是复杂元素
+		— —复杂元素：有子元素的元素
+			<!ELEMENT 元素名称 (子元素)>
+		— —简单元素：没有子元素
+			<!ELEMENT 元素名称 (#PCDATA)>
+	（3）、需要在xml文件中引入dtd文件
+			<!DOCTYPE 根元素名称 STYTEM "dtd文件路径">
+			
+	打开xml文件使用浏览器打开的，浏览器只负责校验xml的语法，不负责校验约束
+	如果想要校验xml的约束，需要使用工具（myEclipse工具）	
+	myEclipse项目中	会负责校验，会报红
+ -->
