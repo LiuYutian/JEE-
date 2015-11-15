@@ -1,0 +1,7 @@
+可以在代码里面，直接使用静态导入方式，导入今天方法或常量
+inport static XX.XX.xxx
+import static java.lang.System.out;
+import static java.util.Arrays.sort; 
+
+比如实现一个计算器，其方法都在Math类里面，此时可以导入Math，就不要再Math.xxx
+使用很少

@@ -1,0 +1,21 @@
+junit的使用：
+	单元测试：测试对象是一个类中的方法
+	junit不是Javase的一部分，想要使用导入jar包
+		但是myEclipse中自带了junit的jar包
+	首先junit版本 3.x 4.x
+		单元测试方法时候，方法命名规则 public void 方法名(){}
+	使用注解方式运行测试方法，在方法的上面
+		@Test
+		写在方法上面
+		选择方法名称，右键运行，run as --- junit test
+		当出现绿色条，表示方法测试通过
+		当出现红棕色条，表示方法测试不通过
+		
+		@Ignore
+		这种标示得到方法不参加测试
+		@Before
+		方法前运行
+		@After
+		方法后运行
+		断言
+			Assert.assertEquals("测试期望值", "方法运行的实际值");

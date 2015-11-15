@@ -1,0 +1,62 @@
+什么是枚举？
+	需要在一定的范围内取值，这个值只能是这个范围内中的任意一个
+	应用：交通信号灯，有三种颜色，每次只能亮三种颜色中里面的一种
+	枚举类型格式：
+	enum 枚举类型名称 {
+		枚举对象1名称,
+		枚举对象2名称,
+		...
+	}
+	例如：
+		enum Color3 {
+		RED, GREEN, YELLOW;
+	}
+	枚举的构造方法也是私有的
+	
+	特殊枚举的操作
+	在枚举类里面有构造方法
+		构造方法里面有参数，需要在每个实例上面都传参数
+	在枚举类里面有抽象方法
+		在枚举的每个实例里面都重写这个抽象方法
+	枚举的api操作：
+		name() : 返回枚举的名称
+		ordinal() : 枚举的下标从0开始
+		valueOf(Class<T> enumType, String name) : 得到枚举对象
+		
+		不在api里面的两个方法，编译的时候生成两个方法
+		valueOf(String name)	获得枚举对象
+		values()	获得所有枚举对象数组
+	练习：
+		// 知道枚举的下标，得到枚举对象和名称
+		@Test
+		public void test3() {
+			Color100[] objs = Color100.values();
+			String name = objs[2].name();
+			System.out.println(name);
+		}
+		
+		// 知道枚举的名称，得到枚举的对象和下标
+		@Test
+		public void test2() {
+			String name1 = "GREEN";
+			// 得到对象
+			Color100 c1 = Color100.valueOf(name1);
+			// 枚举下标
+			int idx1 = c1.ordinal();
+			System.out.println(idx1);
+		}
+		
+		// 知道枚举的对象，得到枚举名称和下标
+		@Test
+		public void test1() {
+			// 得到枚举对象
+			Color100 c100 = Color100.RED;
+			// 枚举的名称
+			String name = c100.name();
+			// 枚举的下标
+			int idx = c100.ordinal();
+			System.out.println(name + 
+					" " + idx);
+		}
+	
+	
