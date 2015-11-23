@@ -1,0 +1,9 @@
+JSP动作标签
+	这些jsp的动作标签，与html提供的标签有本质的区别。
+	1、动作标签时有tomcat（服务器）来解释执行。它与Java代码一样，都是在服务器端执行的。
+	2、html由浏览器来执行
+	3、<jsp:forward>: 转发，它与RequestDisparcher的forward方法是一样的，一个在servlet中使用，一个在jsp中使用
+	4、<jsp:include>: 包含，它与RequestDisparcher的include方法是一样的，一个在servlet中使用，一个在jsp中使用
+		<%@include %>和<jsp:include>有什么不同：前者是静态包含，后者是动态包含，一个是先合并文件，然后编译运行。另一个是先编译，然后导入。
+	5、<jsp:param>:它是用来作为forward和include的子标签！用来给转发或包含的页面传递参数！
+	

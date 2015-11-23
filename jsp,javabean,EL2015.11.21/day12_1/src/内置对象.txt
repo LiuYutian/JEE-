@@ -1,0 +1,21 @@
+JSP九大内置对象
+1、out：jsp的输出流，用来向客户端响应
+2、config：它对一个真身中的ServletConfig对象
+3、page：当前jsp对象！它的引用类型是object，即真身中有如下代码，object page = this;
+4、pageContext：一个顶9个
+5、exception：Throwable
+6、request：httpServletRequest
+7、response：httpResponse
+8、application：ServletContext
+9、session： HttpSession 不是每一个页面都有，<%@ session="false "%>这种页面就没有
+
+1、pageContext
+	Servlet中有三大域，jsp中有四大域，他就是最后一个域对象！
+		域：	ServletContext：整个应用程序
+		  	session：整个会话中只有一个用户
+		  	request：一个请求链
+		  	pageContext：一个jsp页面！这个域是在当前jsp页面和当前jsp页面中使用的标签之间共享数据！
+				域对象
+				代理其他域:pageContext.setAttribute("xxx", "XXX", PageContext.SESSION_SCOPE);存入session
+				获取其他8个内置对象	 ：通过get方法，可以获取其他8个内置对象。
+				******全域查找：pageContext.findAttribute("xxx");从小到大，依次查找

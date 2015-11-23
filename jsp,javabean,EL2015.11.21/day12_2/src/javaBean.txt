@@ -1,0 +1,15 @@
+javaBean的规范：
+1、必须提供一个默认构造器
+2、提供get/set方法，如果只有get方法，那么这个属性就是只读属性
+3、属性：有get/set方法的成员，还可以没有成员，只有get/set方法，属性名称由get/set方法来决定，而不是成员名称
+4、方法名称满足了一定的规范，那么他就是属性！Boolean类型的属性，它的读方法可以是is开头，也可以是get开头
+
+jsp中与javaBean相关的标签！
+1、<jsp:useBean>	: 创建或查找bean
+	* <jsp:useBean id="user1" class="cn.lyt.domain.User" scope="session"/>在session域中查找名为user1的bean，如果不存在，创建
+	* <jsp:useBean id="user1" class="cn.lyt.domain.User" scope="域"/>	
+2、<jsp:setProperty>	： 
+	* <jsp:setProperty property="username" name="user1" value="admin"/>设置名为user1的这个javabean的username属性值为admin
+3、<jsp:getProperty> ： 
+	* <jsp:setProperty property="username" name="user1"/>获取名为user1的javabean的名为username属性值
+	

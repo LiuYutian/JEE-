@@ -1,0 +1,11 @@
+MVC : 它不是Java独有，所有的B/S结果的项目都在使用它
+
+M -- model		模型	 	自己写代码
+V -- View		视图		jsp
+C -- Cotroller	控制器 		servlet
+
+JavaWeb三层架构
+
+Web层	--> 与Web相关的内容(Servlet, JSP, Servlet相关的API：request, response, session, servletContext)
+业务层		--> 业务对象(Service) 将基本的数据层零散方法，整理成业务功能
+数据层 		--> 操作数据库(DAO Data Access Object)(所有对数据库的操作， 不能跳出到DAO之外)

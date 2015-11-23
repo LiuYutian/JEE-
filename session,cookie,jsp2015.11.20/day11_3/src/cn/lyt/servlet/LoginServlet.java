@@ -13,6 +13,19 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		// 获取session中的数据
+		String sessionCode = (String)request.getSession().getAttribute("session_vcode");
+		// 获取用户输入的参数
+		String paramCode  = request.getParameter("verifyCode");
+		
+		// 验证验证码是否正确
+		if(!paramCode.equalsIgnoreCase(sessionCode)) {
+			request.setAttribute("msg", "验证码错误");
+			request.getRequestDispatcher("/session2/login.jsp").forward(request, response);
+			return ;
+		}
+		
 		/*
 		 * 1、获取表单数据
 		 */

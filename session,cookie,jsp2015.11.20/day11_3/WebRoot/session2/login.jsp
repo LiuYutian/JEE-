@@ -19,6 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="text/javascript">
+		function _change() {
+			// 得到img元素，修改src
+			var imgEle = document.getElementById("img");
+			imgEle.src = "/day11_3/VerifyCodeServlet?a=" + new Date().getTime();
+		}
+	</script>
 
   </head>
   <body>
@@ -43,8 +50,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <font color="red"><b><%=message%></b></font>
     <form action="/day11_3/LoginServlet" method="post">
-    	用户名：<input type="text" name="username" value="<%=uname %>"/><br>
+    	用户名：<input type="text" name="username" value="<%=uname%>"/><br>
     	密    码：<input type="password" name="password"><br>
+    	验证码：<input type="text" name="verifyCode" size="3"/>
+	    	<%-- 请求VersifyCodeServlet，获取OutputStream中的数据  --%>
+	    	<img id="img" alt="验证码" src="/day11_3/VerifyCodeServlet">
+	    	<a href="javascript:_change()">换一张</a>
+    	<br>
     	<input type="submit" value="登录"/><br>
     </form>
   </body>

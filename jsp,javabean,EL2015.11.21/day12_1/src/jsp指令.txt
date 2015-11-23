@@ -1,0 +1,49 @@
+JSP三大指令
+	一个jsp页面中可以，有0-N个指令的定义！
+1、page -->最复杂：<%@page language="java" info="xxx" %>
+	*pageEncoding和contentType：
+		pageEncoding：它指定当前jsp页面的编码，只要不说谎，就不会有乱码，即是什么编码就写什么编码！在服务器要把jsp编译成.java时，需要使用pageEncoding！
+		contentType：它表示添加一个响应头，Content-Type！等同于response.setContentType("text/html;charset=utf-8");
+		如果两个属性只提供一个，那么另一个的默认值为设置的那一个。即默认相同。
+		如果两个属性都没有设置，那么默认为iso，不能使用中文。
+	*import：导包！可以出现多次
+	*errorPage和isErrorPage
+		errorPage：当前页面如果抛出异常，那么要转发到那一个页面，由errorPage来指定。
+		isErrorPage：它指定当前页面是否为处理错误的页面！当该属性为true时，这个页面会设置状态码为500！这个页面可以使用9大内置对象中的exception
+		<!-- 配置出错跳转页面 -->
+		<error-page>
+	  	  <error-code>404</error-code>
+	  	  <location>/error404.jsp</location>
+		</error-page>
+		<error-page>
+	  	  <error-code>500</error-code>
+	  	  <location>/error500.jsp</location>
+		</error-page>
+		<error-page>
+	      <exception-type>java.lang.RuntimeException</exception-type>
+	      <location>/error.jsp</location>
+		</error-page>
+	* autoFlush和buffer
+		autoFlush：指定jsp的输出缓冲区满时，是否自动刷新！默认为true，如果为false，那么在缓冲区满时会抛出异常！
+		buffer：指定缓冲区大小，默认为8kb，通常不需要修改！
+	* isELIgnored：是否忽略el表达式，默认值是false，不忽略，即支持。
+	* 基本没用：
+		*****language：指定当前jsp编译后的语言类型，默认值为Java
+		info：信息，说明性信息
+		isThreadSafe：当前的jsp是否支持并发访问！
+		session：当前页面是否支持session，false不支持
+		extends：让jsp生成的servlet去继承该属性指定的类
+2、include --> 静态包含
+	与RequestDispatcher的include()方法的功能相似！
+	<%@include%>它是在jsp编译成Java文件时完成的！他们共同生成一个Java（就是一个servlet）文件，然后在生成一个class文件
+	RequestDispatcher的include()是一个方法，包含和被包含的是两个servlet，即两个.class!他们只是把响应的内容在运行时合并了！
+	作用：把页面分解了，使用包含的方式组合在一起，这样一个页面中不变的部分，就是一个独立的jsp，而我们只需要处理变化的页面。
+	
+	
+3、taglib-->导入标签库
+	两个属性：
+		prefix：指定标签库在本页面中的前缀！由我们自己来起名称！
+		uri：指定标签库的位置！
+		
+		<%@taglib prefix="pre" uri="/..." %>
+		用前缀来区分标签库，使用方法：使用text标签时：<pre:text></pre:text>

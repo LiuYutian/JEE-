@@ -1,0 +1,40 @@
+自定义标签
+1、步骤
+	*标签处理类（标签也是一个对象，那么就需要先有类）
+	*tld文件，它是一个xml
+	*页面中使用<%@taglib%>来指定tld文件的位置
+2、标签处理类
+	SimpleTag
+	*void doTag();	每次执行标签时，都会调用这个方法。自己使用
+	*JspTag getParent(); 返回父标签（非生命周期方法）
+	*void setParent(JspTag);	设置父标签
+	*void setJspBody(JspFragment); 设置标签体
+	*void setJspContext(JspContext); 设置jsp上下文对象，它儿子是pageContext
+	写，而不调用。	
+	doTage()会在其他桑方法之后被tomcat调用。
+	
+	 <tag>
+	  <name>myTag1</name> 指定当前标签名称
+	  <tag-class>cn.lyt.tag.MyTag1</tag-class> 指定标签的标签处理类
+	  <body-content>empty</body-content>	指定标签体的类型，我们这里使用空标签
+	 </tag>
+进阶
+	*empty：无标签体
+	*jsp：2.0已经不支持这个类型了。
+	*scriptless：只能是EL 表达式，也可以是其他的标签！
+	*tagdependent：标签体内容不会被执行，而是执行赋值标签处理类
+	
+标签属性
+	1、给你的标签处理类添加属性
+		为标签处理类添加属性，属性至少需要一个set方法！这个set方法会在doTage()方法之前被服务器调用，所有doTage方法就有属性可以使用了。
+	2、在tld文件中对属性进行配置
+		 <tag>
+		  <name>myTag5</name>
+		  <tag-class>cn.lyt.tag.MyTag5</tag-class>
+		  <body-content>scriptless</body-content>
+		  <attribute>	
+		  	<name>test</name>	指定属性名
+		  	<required>true</required>	指定属性是不是必须的
+		  	<rtexprvalue>true</rtexprvalue>	指定属性是否可以使用EL
+		  </attribute>
+		 </tag>
