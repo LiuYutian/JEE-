@@ -1,0 +1,97 @@
+DDL(data definition language):数据定义语言，用来定义数据库对象：库，表，列等；
+1、查看数据库
+	show databases;
+2、查看表
+	show tables;
+3、切换数据库
+	use test;
+4、创建数据库
+	create database mydb1;
+5、删除数据库
+	drop database mydb1;
+6、修改编码方式
+	alter database mydb1 character set utf8;
+
+7、创建表
+	create table tb_stu(number char(11), 
+		name varchar(50), 
+		age int, gender 
+		varchar(10)
+	);
+8、查看表
+	show tables;
+9、查看创建表语句
+	show create table 表名;
+10、表结构
+	desc tb_stu;
+11、删除表
+	drop table tb_stu1;
+
+修改
+12、修改表
+	添加列：
+	mysql> alter table tb_stu
+    	-> add (
+    	-> education varchar(50)
+    	-> );
+	修改关键字：
+	mysql> alter table tb_stu
+    	-> modify education varchar(100);
+	删除列：
+	mysql> alter table tb_stu
+    	-> drop education;
+	修改表名
+	alter table tb_stu rename to tb_student;
+DML（data Manipulation language）:数据操作语言，用来定义数据库记录（数据）;
+1、插入数据
+	指定所有添加字段
+	insert into stu(number,name,age,gender)
+    	values ('ITCAST_0001', 'zhangsan', 28, 'male');
+	
+	指定部分添加字段	
+	insert into stu (number, name) 
+	values('ITCAST_0002', 'lisi');	
+
+	不指定添加字段
+	insert into stu 
+	values ('ITCAST_0003', 'wangwu', 82, 'feale');
+2、修改记录
+	修改表中所有的年龄为18
+	update stu set age=18;
+
+	修改表中所有年龄，性别
+	update stu set age=18, gender='male';
+
+	修改指定记录的性别
+	update stu set gender='female' where name='zhangsan';
+
+	修改年龄，指定两个条件
+	update stu set age=20 where name='wangwu' or number='ITCAST_0003';
+
+	条件修改年龄，条件20-40岁
+	update stu set age=21 where age between 20 and 40;
+
+	条件in满足in集合中任意一个，执行
+	in('zhangsan', 'lisi');
+
+	条件 not 就是  !
+3、删除数据
+	delete from stu;	// 删除表中所有数据，后面可以跟条件
+	
+DCL (data Control Language)：数据控制语言，用来定义访问权限和安全级别；
+1、创建用户
+	create user 用户名@IP地址 identified by 'mm';	指定ip登录
+	create user 用户名@'%' identified by 'mm';	任意ip登录
+	create user zhangsan@localhost identified by '123';
+2、授权
+	grant all on mydb1.* to zhangsan@localhost;
+3、撤销授权
+	revoke delete on mydb1.* from zhangsan@localhost;
+4、查看权限
+	show grants for zhangsan@localhost;
+5、删除用户
+	drop user zhangsan@localhost;
+DQL （data Query Language）：数据查询语言，用来查询记录（数据）。
+1、查询表记录
+	select * from 表名
+	
