@@ -1,0 +1,19 @@
+show variables like 'char%';
+character_set_client:utf8 服务器不管客户端是什么编码，服务器都当厂utf8
+	客户端是gbk，服务器是utf8
+	让客户端改utf8（控制台行不通）
+	让服务器改jgk 
+	set characher_set_client=gbk; 只在当前窗口内有效，关闭窗口后，再次打开需要重新设置。
+
+	character_set_results=utf8, 从服务器发送打客户端编码格式。
+	gbk
+	
+my.ini
+	配置文件中配置，可以一次性搞定，控制台
+[client]
+port=3306
+[mysql]
+default-character-set=gbk
+它将修改三个变量，client results connection
+
+SQLyog会自己修改编码。

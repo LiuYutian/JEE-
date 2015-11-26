@@ -1,0 +1,120 @@
+约束是添加在列上的，用来约束列的！即字段。
+
+1、主键约束（唯一标示）
+	非空，唯一，被引用(学习外键时)，
+	创建方式：
+		create Table stu (
+			sid			char(6) primary key,
+			sname 	varchar(20),
+			age 		int,
+			gender	varchar(10)
+		);
+		指定sid列为主键列，即为sid列添加主键约束
+		
+		create table stu (
+			sid 		char(6),
+			sname 	varchar(20),
+			age 		int,
+			gender	varchar(10),
+			primary key(sid)
+		);
+		
+	修改表时指定主键，
+	alter table stu add primary key(sid);
+	
+	删除主键约束
+	ALTER TABLE emp DROP PRIMARY KEY;
+	
+2、主键自增长
+	创建表时：必须是int
+	CREATE TABLE t_stu (
+		sid INT PRIMARY KEY AUTO_INCREMENT,
+		sname VARCHAR(20),
+		age INT,
+		gender VARCHAR(10)
+	);
+	
+	修改表时设置主键自增长：
+	ALTER TABLE stu CHANGE sid sid INT AUTO_INCREMENT;
+	修改表时删除主键自增长
+	ALTER TABLE STU CHANGE sid sid int;
+	
+3、非空约束
+	create Table stu (
+		sname varchar(20) NOT NULL;
+	);	
+	
+4、唯一约束
+	create TABLE stu(
+		sid int PRIMARY KEY AUTO_INCREMENT,
+		sname varchar(20) NOT NULL UNIQUE,
+	);
+
+5、概念模型
+	对象模型：在Java中是domain，例如user， student，
+	关系(数据)模型：在database中是表，
+	对象模型：可以双向关联，而且引用的是对象，而不是主键！
+	关系模型：只能多方引用一方，而且引用的只是主键，而不是整行记录。
+	
+6、外键约束 (多对一)
+	外键必须是另一个表的主键值 外键要引用主键
+	外键可以重复
+	外键可以为空
+	一张表可以有多个外键
+	创建时添加外键约束：
+		CREATE TABLE dept (
+			deptno INT PRIMARY KEY AUTO_INCREMENT,
+			dname VARCHAR(50)
+		);
+	
+		CREATE TABLE emp(
+			empno INT PRIMARY KEY AUTO_INCREMENT,
+			ename VARCHAR(50),
+			dno INT,
+			CONSTRAINT fk_emp_dept FOREIGN KEY(dno) REFERENCES dept(deptno)
+		);
+		
+ 	修改添加外键约束
+ 	ALTER TABLE emp ADD CONSTRAINT fk_emp_dept FOREIGN KEY(dno) REFERENCES dept(deptno);
+
+7、一对一关系
+	创建表时添加一对一外键
+		CREATE TABLE hashand(
+		  hid INT PRIMARY KEY AUTO_INCREMENT,
+		  hname VARCHAR(50)
+		);
+	
+		CREATE TABLE wife(
+		  wid INT PRIMARY KEY AUTO_INCREMENT,
+		  wname VARCHAR(50),
+		  CONSTRAINT fk_wife_hasband FOREIGN KEY(wid) REFERENCES hasband(hid)
+		);
+		
+		从表的主键作为主表的外键
+		/*
+		wid:
+		1、非空
+		2、唯一
+		3、引用hid
+		*/
+
+8、多对多
+	创建方式
+	CREATE TABLE student(
+	  sid INT PRIMARY KEY AUTO_INCREMENT,
+	  sname VARCHAR(50)
+	);
+	
+	CREATE TABLE teacher (
+	  tid INT PRIMARY KEY AUTO_INCREMENT,
+	  tname VARCHAR(50)
+	);
+	
+	CREATE TABLE stu_tea(
+	  sid INT,
+	  tid INT,
+	  CONSTRAINT fk_student FOREIGN KEY(sid) REFERENCES student(sid),
+	  CONSTRAINT fk_teacher FOREIGN KEY(tid) REFERENCES teacher(tid)
+	);
+	
+	两个主表，一个关系表，两张主表没有关系，关系表进行关系存储。

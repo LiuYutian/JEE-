@@ -1,0 +1,7 @@
+通过数据库提供的dos窗口执行
+
+导出数据库文件 备份数据库内容。
+	mysqldump -uroot -proot mydb1>C:/a.sql 
+导入数据库文件 还原数据库文件
+	mysql -uroot -proot mydb1<C:/a.sql
+	登录后，通过source c:/a.sql;

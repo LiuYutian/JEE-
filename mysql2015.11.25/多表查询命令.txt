@@ -1,0 +1,73 @@
+链接查询
+1、分类
+	内连接：笛卡尔积	
+	外链接
+		左外链接
+		右外链接
+		全外链接（MySQL不支持）
+	自然链接（属于一种简化方式）
+2、内连接
+	方言：select * 
+				from 表名1 别名1, 表名2 别名2 
+				where 别名1.xx = 别名2.xx
+		例：
+			SELECT e.ename, e.sal, d.dname
+			FROM emp e, dept d 
+			WHERE e.deptno=d.deptno;
+	标准：select * 
+				from 表名1 别名1 inner join 表名2 别名2 
+				on 别名1.xx = 别名2.xx
+		例：
+			SELECT e.ename, e.sal, d.dname
+			FROM emp e INNER JOIN dept d 
+			ON e.deptno=d.deptno;
+	自然：select * 
+				from 表名1 别名1 NATURAL join 表名2 别名2 
+		
+		例：
+			SELECT e.ename, e.sal, d.dname
+			FROM emp e NATURAL JOIN dept d 
+	
+	内连接查询出的所有记录都瞒足条件
+	
+3、外链接：外链接有一主一次
+	左外链接：左外即左表为主，即emp为主，那么表中所有满足条件的记录无论满足不满足条件，都打印出来。
+		当不满足条件时，右表部分使用null来补位。
+		例：
+			SELECT e.ename, e.sal, d.dname, e.deptno, d.deptno
+			FROM emp e LEFT OUTER JOIN dept d
+			ON e.deptno=d.deptno
+	右外链接：右外即右表为主，即dept为主，那么表中所有满足条件的记录无论满足不满足条件，都打印出来。
+		当不满足条件时，左表部分使用null来补位。
+		例：
+			SELECT e.ename, e.sal, d.dname, e.deptno, d.deptno
+			FROM emp e RIGHT OUTER JOIN dept d
+			ON e.deptno=d.deptno
+	全外链接（MySQL不支持）：全外左右都为主，左表不满足出现，右表null补位。
+		右表不满足出现，左表null补位。
+		例：
+		SELECT e.ename, e.sal, d.dname, e.deptno, d.deptno
+		FROM emp e full OUTER JOIN dept d
+		ON e.deptno=d.deptno
+	用其他方式实现MySQL全外链接
+		SELECT e.ename, e.sal, d.dname, e.deptno, d.deptno
+		FROM emp e RIGHT OUTER JOIN dept d
+		ON e.deptno=d.deptno
+		UNION
+		SELECT e.ename, e.sal, d.dname, e.deptno, d.deptno
+		FROM emp e LEFT OUTER JOIN dept d
+		ON e.deptno=d.deptno
+		用合并结果集实现。
+	
+子查询
+	SELECT 
+	FROM 子查询作为表
+	WHERE 子查询作为条件
+	
+	查询公司工资最高的员工的详细信息
+	例：SELECT * FROM emp WHERE sal=(SELECT MAX(sal) FROM emp);
+	
+	// 子查询内容 作为 from 表
+	SELECT e.empno, e.ename FROM (SELECT * FROM emp WHERE deptno=30) e;
+	
+	

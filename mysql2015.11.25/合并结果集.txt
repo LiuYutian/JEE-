@@ -1,0 +1,8 @@
+合并结果集
+	要求被合并的表中，列的类型和列数相同
+	（这里指的是结果集的类型和列数相同，并不是表的结构）。 
+	SELECT * FROM ab UNION ALL SELECT * FROM cd;
+	将两张表的结果合并在一起显示。
+	
+	如果关键字中没有all这结果集中重复的部分将会被去掉。
+	SELECT * FROM ab UNION SELECT * FROM cd;
